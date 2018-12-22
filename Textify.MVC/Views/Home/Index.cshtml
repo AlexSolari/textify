@@ -1,0 +1,55 @@
+﻿@model IList<SiteText>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main role="main">
+    @if (!Context.User.Identity.IsAuthenticated)
+    {
+        <section class="jumbotron text-center">
+            <div class="container">
+                <img src="~/Content/favicon.png" alt="Textify logo" class="img-thumbnail" style="height: 4rem;">
+                <h1 class="jumbotron-heading display-3">Textify</h1>
+                <p class="lead text-muted">Easy-to-use tool for hosting parts of your website, so you can edit them in easy and quick way.</p>
+                <p>
+                    @Html.ActionLink("Sign Up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-primary" })
+                    @Html.ActionLink("Log In", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-secondary" })
+                </p>
+            </div>
+        </section>
+        <div class="album py-5 info-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top img-fluid" alt="" style="width: 100%; display: block;" src="~/Content/Images/guide_1.png" data-holder-rendered="true">
+                            <div class="card-body">
+                                <p class="card-text">Create texts for you app with ease.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top img-fluid" alt="" style="width: 100%; display: block;" src="~/Content/Images/guide_2.png" data-holder-rendered="true">
+                            <div class="card-body">
+                                <p class="card-text">Set them up on your app.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top img-fluid" alt="" style="width: 100%; display: block;" src="~/Content/Images/guide_3.png" data-holder-rendered="true">
+                            <div class="card-body">
+                                <p class="card-text">Enjoy your easy-to-edit dynamic content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        @Html.Partial("_TextsEditor", Model);
+    }
+</main>

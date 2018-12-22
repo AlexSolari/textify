@@ -1,0 +1,122 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/*Loader*/
+.lds-dual-ring {
+    display: none;
+    width: 24px;
+    height: 24px;
+    float: right;
+}
+.disabled+.lds-dual-ring {
+    display: inline-block;
+}
+
+.lds-dual-ring:after {
+    position: relative;
+    top: 6px;
+    content: " ";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #808080;
+    border-color: #808080 transparent #808080 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Set width on the form input elements since they're 100% wide by default */
+.texts-container input,
+.texts-container select,
+.texts-container textarea {
+    width: 100%;
+}
+p.card-text {
+    min-height: 100px;
+}
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+.cards-content .card{
+    margin: 10px 0;
+}
+.text-header {
+    margin-top: 4px;
+    display: inline-block;
+}
+.card:not(.new-text) .card-header .form-group {
+    max-width: calc(100% - 64px);
+}
+.btn-collapse.collapsed .if-not-collapsed {
+    display: none;
+}
+.btn-collapse:not(.collapsed) .if-collapsed {
+    display: none;
+}
+.generate-script textarea{
+    height: 150px;
+    resize: none;
+}
+.new-text {
+    margin-bottom: 12px;
+}
+.no-texts {
+    display: none;
+    padding: 1em;
+    margin-top: 2em;
+}
+.cards-content:empty + .no-texts {
+    display: block;
+}
+.texts-container{
+    background: none;
+}
+.texts-actions {
+    float: none;
+}
+.info-row img {
+    border-bottom: 1px solid lightgray
+}
+.info-row .card-body {
+    text-align: center;
+    max-height: 95px;
+}
+main .jumbotron {
+    margin-top: 16px;
+}
+.card-header .form-group{
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .texts-actions{
+        float: right;
+    }
+}

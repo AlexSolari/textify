@@ -1,0 +1,33 @@
+﻿@model SiteTextViewModel
+<div class="card">
+    <form>
+        @Html.Hidden("Id", Model.Text.Id)
+        @Html.Hidden("UserEmail", Model.Text.UserEmail)
+        <div class="card-header clearfix">
+            <button class="btn btn-secondary @((Model.Collapsed) ? "collapsed" : "") btn-sm float-right btn-collapse" type="button" data-toggle="collapse" data-target="#id-@Model.Text.Id" aria-expanded="false" aria-controls="id-@Model.Text.Id">
+                <span class="if-collapsed">Show</span>
+                <span class="if-not-collapsed">Hide</span>
+            </button>
+            <div class="form-group" style="display: none">
+                @Html.TextBox("TextKey", Model.Text.TextKey, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <span class="text-header">
+                @Model.Text.TextKey
+            </span>
+        </div>
+        <div class="collapse card-body @((Model.Collapsed) ? "" : "show")" id="id-@Model.Text.Id">
+            <p class="card-text text-value">
+                @Model.Text.TextValue
+            </p>
+            <div class="form-group" style="display: none">
+                @Html.TextArea("TextValue", Model.Text.TextValue, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <a href="#" class="btn btn-primary btn-edit">Edit</a>
+            <a href="#" class="btn btn-danger btn-delete">Delete</a>
+            <div class="lds-dual-ring"></div>
+            <a href="#" class="btn btn-primary btn-save" style="display: none">Save</a>
+            <div class="lds-dual-ring"></div>
+            <a href="#" class="btn btn-cancel btn-outline-secondary" style="display: none">Cancel</a>
+        </div>
+    </form>
+</div>

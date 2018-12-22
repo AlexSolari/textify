@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Textify.MVC/bin
+/Textify.MVC/obj
+/Textify.MVC/Properties/PublishProfiles
+/Textify.Core/bin
+/Textify.Core/obj
+/sORM/obj
+/Textify.MVC/Web.Release.config
+/Textify.MVC/Web.Debug.config
+/Textify.MVC/Web.config
+/Textify.MVC/App_Data/DefaultConnection_log.ldf
+/Textify.MVC/App_Data/DefaultConnection.mdf

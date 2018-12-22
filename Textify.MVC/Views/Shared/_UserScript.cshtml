@@ -1,0 +1,18 @@
+﻿@model IList<SiteText>
+window.Texts = {};
+@foreach (var text in Model)
+{
+    var value = Html.Encode(text.TextValue);
+    var key = text.TextKey;
+    @Html.Raw("window.Texts['" + key + "'] = '" + value + "';")
+}
+window.Texts.ReplaceAll = function(){
+    var replaceAll = function (str, find, replace) {
+        return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
+    };
+
+    for (var text in window.Texts) {
+        document.body.innerHTML = replaceAll(document.body.innerHTML, text, window.Texts[text]);
+    };
+};
+document.addEventListener("DOMContentLoaded", window.Texts.ReplaceAll);
