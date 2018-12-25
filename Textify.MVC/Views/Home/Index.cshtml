@@ -11,6 +11,7 @@
                 <img src="~/Content/favicon.png" alt="Textify logo" class="img-thumbnail" style="height: 4rem;">
                 <h1 class="jumbotron-heading display-3">Textify</h1>
                 <p class="lead text-muted">Easy-to-use tool for hosting parts of your website, so you can edit them in easy and quick way.</p>
+                <p class="lead text-muted">Any questions? Check out <a href="@Url.Action("Faq", "Home")">FAQ</a>.</p>
                 <p>
                     @Html.ActionLink("Sign Up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-primary" })
                     @Html.ActionLink("Log In", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-secondary" })

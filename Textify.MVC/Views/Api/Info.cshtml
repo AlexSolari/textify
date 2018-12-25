@@ -1,0 +1,130 @@
+﻿@model UserApiKey
+<div class="jumbotron bg-white">
+    <h1 class="display-4 text-center">API</h1>
+    <p>
+        <h3>General</h3>
+        Textify provides flexible API for all your needs.
+    </p>
+    <p>
+        To use Textify API you will need to use your <strong>API Key:</strong>
+        <div class="form-group">
+            <input type="text" readonly="readonly" class="form-control" id="apiKey" value="@Model.ApiKey">
+        </div>
+    </p>
+    <h3>End-points</h3>
+    <ul>
+        <li>
+            <h5>Get all texts</h5>
+            <div class="form-group">
+                <label>Method:</label>
+                POST
+            </div>
+            <div class="form-group">
+                <label>Parameters:</label>
+                <ul>
+                    <li><code>key</code>: your API Key</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label>URL:</label>
+                <code>@Url.Action("GetAllTexts", "Api", null, HttpContext.Current.Request.Url.Scheme)</code>
+            </div>
+            <div class="form-group">
+                <label>Response format:</label>
+                <pre class="json-example border">
+                    [
+                      {
+                        "Key": "Example_Text_2",
+                        "Value": "Example",
+                        "Id": "55390ceb-2d67-4780-93c7-1899db12be71"
+                      },
+                      {
+                        "Key": "Example_Text_1",
+                        "Value": "Example",
+                        "Id": "a7a9286a-8c92-453a-8144-41dc111459bd"
+                      }
+                    ]</pre>
+            </div>
+        </li>
+        <li>
+            <h5>Get text value by key</h5>
+            <div class="form-group">
+                <label>Method:</label>
+                POST
+            </div>
+            <div class="form-group">
+                <label>Parameters:</label>
+                <ul>
+                    <li><code>key</code>: your API Key</li>
+                    <li><code>textKey</code>: text Key</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label>URL:</label>
+                <code>@Url.Action("GetTextValue", "Api", null, HttpContext.Current.Request.Url.Scheme)</code>
+            </div>
+            <div class="form-group">
+                <label>Response format:</label>
+                <pre class="json-example border">
+                    "Example"</pre>
+            </div>
+        </li>
+        <li>
+            <h5>Create new text</h5>
+            <div class="form-group">
+                <label>Method:</label>
+                POST
+            </div>
+            <div class="form-group">
+                <label>Parameters:</label>
+                <ul>
+                    <li><code>key</code>: your API Key</li>
+                    <li><code>textKey</code>: text Key</li>
+                    <li><code>textValue</code>: text Value</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label>URL:</label>
+                <code>@Url.Action("CreateNewText", "Api", null, HttpContext.Current.Request.Url.Scheme)</code>
+            </div>
+            <div class="form-group">
+                <label>Response format:</label>
+                <pre class="json-example border">
+                    {
+                      "Key": "Example_Text_2",
+                      "Value": "Example",
+                      "Id": "2756facf-b289-41b2-a1bc-56856ed34517"
+                    }</pre>
+            </div>
+        </li>
+        <li>
+            <h5>Delete existing text</h5>
+            <div class="form-group">
+                <label>Method:</label>
+                POST
+            </div>
+            <div class="form-group">
+                <label>Parameters:</label>
+                <ul>
+                    <li><code>key</code>: your API Key</li>
+                    <li><code>id</code>: text Id</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label>URL:</label>
+                <code>@Url.Action("DeleteExistingText", "Api", null, HttpContext.Current.Request.Url.Scheme)</code>
+            </div>
+            <div class="form-group">
+                <label>Response format:</label>
+                <ul>
+                    <li>
+                        <code>true</code> - text entry deleted.
+                    </li>
+                    <li>
+                        <code>false</code> - deletion failed.
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

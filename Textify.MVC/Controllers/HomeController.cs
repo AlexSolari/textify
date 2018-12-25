@@ -16,5 +16,10 @@ namespace Textify.MVC.Controllers
 
             return View(texts);
         }
+
+        public ActionResult Faq()
+        {
+            return View();
+        }
     }
 }
