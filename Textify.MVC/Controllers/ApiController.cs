@@ -14,7 +14,11 @@ namespace Textify.MVC.Controllers
     {
         public ActionResult Info()
         {
+            if (!HttpContext.User.Identity.IsAuthenticated)
+                return RedirectToAction("Login", "Account");
+
             var mail = SiteApi.Users.GetCurrentUserEmail();
+
             var existingKey = SiteApi.UserKeys.GetByField("UserEmail", mail);
             UserApiKey apiKey;
 
