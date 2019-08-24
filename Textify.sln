@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textify.MVC", "Textify.MVC\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Textify.Core", "Textify.Core\Textify.Core.csproj", "{87032DA9-B1DA-455D-9CA8-278BCB0E6C5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sORM", "sORM\sORM.csproj", "{0DAC049E-A505-4F26-BCAC-DB04DA7F11A2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{87032DA9-B1DA-455D-9CA8-278BCB0E6C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87032DA9-B1DA-455D-9CA8-278BCB0E6C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87032DA9-B1DA-455D-9CA8-278BCB0E6C5D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DAC049E-A505-4F26-BCAC-DB04DA7F11A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DAC049E-A505-4F26-BCAC-DB04DA7F11A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DAC049E-A505-4F26-BCAC-DB04DA7F11A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DAC049E-A505-4F26-BCAC-DB04DA7F11A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
